@@ -1,0 +1,23 @@
+{
+  "name": "agrego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-modules node_modules/mocha-esm/index.mjs test/test-*.js -r esm",
+    "test:watch": "nodemon -e js --experimental-modules node_modules/mocha-esm/index.mjs test/test-*.js -r esm",
+    "start": "node --experimental-modules lib/index.js",
+    "watch": "nodemon -e js --experimental-modules  lib/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha-esm": "^1.1.1",
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "lowdb": "^1.0.0"
+  }
+}
