@@ -25,44 +25,38 @@ $ npm run sample:client
 $ npm run sample:server
 ```
 
-If you run this at 11:00 and then check at 12:01 you should see something like this:
+If you run this at 14:00 and then check at 14:10 you should see something like this:
 
 ```json
-{ 
-  "2019" : {
-    "aggregated": {
-      count: 33,
-      state: [{name: 'first', count: 12}, {name: 'second', count: 10}, {name: 'third', count: 11}],
-    },
-    "10": {
-      "aggregated": {
-        count: 33,
-        state: [{name: 'first', count: 12}, {name: 'second', count: 10}, {name: 'third', count: 11}],
-      },
-      "9": {
-        "11": {
-          count: 33,
-          state: [{name: 'first', count: 12}, {name: 'second', count: 10}, {name: 'third', count: 11}],
-        },
-        "12": {
-          "0": {
-            count: 33,
-            state: [{name: 'first', count: 12}, {name: 'second', count: 10}, {name: 'third', count: 11}],
-          },
-          "1": {
-            "0": {
-              count: 3,
-              state: [{name: 'first', count: 1}, {name: 'second', count: 1}, {name: 'third', count: 1}],
-            },
-            "11": {
-              count: 33,
-              state: [{name: 'first', count: 12}, {name: 'second', count: 10}, {name: 'third', count: 11}],
-            },
-          },
-        },
-      },
-    },
-  },
+Hits by hours of the current day { 
+  '14': { state: [ [Object], [Object], [Object] ], num: 130 } 
 }
+Hits by minutes of the current hour {
+  '0': { state: [ [Object], [Object], [Object] ], num: 12 },
+  '1': { state: [ [Object], [Object], [Object] ], num: 10 },
+  '2': { state: [ [Object], [Object], [Object] ], num: 11 },
+  '3': { state: [ [Object], [Object], [Object] ], num: 10 },
+  '4': { state: [ [Object], [Object], [Object] ], num: 14 },         
+  '5': { state: [ [Object], [Object], [Object] ], num: 9 },
+  '6': { state: [ [Object], [Object] ], num: 12 },                   
+  '7': { state: [ [Object], [Object], [Object] ], num: 10 },
+  '8': { state: [ [Object], [Object], [Object] ], num: 12 },
+  '9': { state: [ [Object], [Object], [Object] ], num: 14 },
+  '10': { state: [ [Object], [Object], [Object] ], num: 12 },
+}
+Hits by seconds of the current minute {
+  '3': { state: [ [Object] ], num: 1 },
+  '4': { state: [ [Object] ], num: 1 },
+  '8': { state: [ [Object] ], num: 1 },
+  '10': { state: [ [Object] ], num: 1 },
+  '12': { state: [ [Object] ], num: 1 },
+  '21': { state: [ [Object] ], num: 1 },
+  '29': { state: [ [Object] ], num: 1 },
+  '30': { state: [ [Object] ], num: 1 },
+  '37': { state: [ [Object] ], num: 1 },
+  '40': { state: [ [Object] ], num: 1 },
+  '50': { state: [ [Object] ], num: 1 }
+}
+
 ```
 
