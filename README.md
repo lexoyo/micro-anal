@@ -1,10 +1,20 @@
+## Project status
 
+It is an experiment, some things are missing for a working prototype:
+
+* adapters: for now it saves everything in files, but it should be able to use a db
+* demo: a web app which shows stats (website analytics, server state...)
+
+Know bugs
+
+* the `hit` method should already aggregate the data instead of replacing the current second with 1 hit
+
+## How to test this?
 ```sh
 $ npm install --save micro-anal
 ```
 
 Example of a [script "feeding" the analytics with random data](samples/server.js)
-
 
 And then here is a [script which displays the aggregated current stats](samples/client.js)
 
@@ -55,3 +65,4 @@ If you run this at 11:00 and then check at 12:01 you should see something like t
   },
 }
 ```
+
