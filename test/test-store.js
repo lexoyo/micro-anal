@@ -1,5 +1,5 @@
 import assert from 'assert'
-import {read, write, init, clear} from '../lib/store.js'
+import {read, write, clear} from '../lib/store.js'
 
 const TEST_ID = 'test id'
 const TEST_DATA = {
@@ -9,8 +9,7 @@ const TEST_DATA = {
 
 describe('store', function() {
 	before(async function() {
-		await init('test.json')
-		await clear()
+		await clear(TEST_ID)
 	})
   describe('read and write values', function() {
     it('should return null when the value is not present', async function() {
@@ -20,10 +19,12 @@ describe('store', function() {
       await write(TEST_ID, TEST_DATA)
 		})
     it('should read the stored value', async function() {
-      assert.equal(await read(TEST_ID), TEST_DATA)
+      await write(TEST_ID, TEST_DATA)
+      const result = await read(TEST_ID)
+      assert.deepEqual(result, TEST_DATA)
     })
     it('should clear the db', async function() {
-      await clear()
+      await clear(TEST_ID)
       assert.equal(await read(TEST_ID), null)
     })
   })

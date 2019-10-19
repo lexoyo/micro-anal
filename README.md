@@ -3,41 +3,16 @@
 $ npm install --save micro-anal
 ```
 
-Example of "feeding" the analytics with random data
+Example of a [script "feeding" the analytics with random data](samples/server.js)
 
-```js
-// in server.js
-const {feed, aggregate} = require('micro-anal')
-const EXAMPLE_STATES = [{name: 'first'}, {name: 'second'}, {name: 'third'}]
-const EXAMPLE_ID = 'an ID'
-setTimeout(() => {
-  feed(EXAMPLE_ID, {
-    state: EXAMPLE_STATES[Math.floor(Math.random() * EXAMPLE_STATES.length)],
-  }, new Date())
-}, Math.rand() * 1000)
 
-// this should be in another thread
-setTimeout(() => {
-  aggregate(new Date())
-}, 100)
-```
-
-And then display the result
-
-```js
-// in client-cli.js
-const {getState} = require('micro-anal')
-const EXAMPLE_ID = 'an ID'
-setTimeout(() => {
-  console.log('State', getState(EXAMPLE_ID, new Date())
-}, 1000)
-```
+And then here is a [script which displays the aggregated current stats](samples/client.js)
 
 To run this sample, you need to run these two commands:
 
 ```sh
-$ node server.js
-$ node client-cli.js
+$ npm run sample:client
+$ npm run sample:server
 ```
 
 If you run this at 11:00 and then check at 12:01 you should see something like this:
