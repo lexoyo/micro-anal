@@ -12,6 +12,8 @@ Know bugs
 Similar more advanced project
 
 * [micro analytics](https://github.com/micro-analytics)
+* [microanalytics.io (not open source)](https://microanalytics.io/email/verify)
+
 
 ## How to test this?
 ```sh
