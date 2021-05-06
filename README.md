@@ -9,6 +9,10 @@ Know bugs
 
 * the `hit` method should already aggregate the data instead of replacing the current second with 1 hit
 
+Similar more advanced project
+
+* [micro analytics](https://github.com/micro-analytics)
+
 ## How to test this?
 ```sh
 $ npm install --save micro-anal
